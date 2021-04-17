@@ -51,9 +51,7 @@
               "apps/frontend/client/src/favicon.ico",
               "apps/frontend/client/src/assets"
             ],
-            "styles": [
-              "apps/frontend/client/src/styles.scss"
-            ],
+            "styles": ["apps/frontend/client/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -115,9 +113,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/frontend/client"
-          ],
+          "outputs": ["coverage/apps/frontend/client"],
           "options": {
             "jestConfig": "apps/frontend/client/jest.config.js",
             "passWithNoTests": true
@@ -146,9 +142,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/frontend/client-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/frontend/client-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -172,9 +166,7 @@
               "apps/frontend/admin/src/favicon.ico",
               "apps/frontend/admin/src/assets"
             ],
-            "styles": [
-              "apps/frontend/admin/src/styles.scss"
-            ],
+            "styles": ["apps/frontend/admin/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -236,9 +228,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/frontend/admin"
-          ],
+          "outputs": ["coverage/apps/frontend/admin"],
           "options": {
             "jestConfig": "apps/frontend/admin/jest.config.js",
             "passWithNoTests": true
@@ -267,9 +257,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/frontend/admin-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/frontend/admin-e2e/**/*.{js,ts}"]
           }
         }
       }
