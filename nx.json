@@ -50,6 +50,7 @@
     },
     "backend-api": {
       "tags": [
+        "scope: backend-api",
         "type: app"
       ]
     }
