@@ -1,30 +1,26 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "int-srv",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "frontend-client": {
-      "tags": ["scope: frontend-client"]
-    },
+    "frontend-client": { "tags": ["scope: frontend-client"] },
     "frontend/client-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend-client"]
+    },
+    "frontend-admin": { "tags": ["scope: frontend-admin"] },
+    "frontend/admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["frontend-admin"]
     }
   }
 }
