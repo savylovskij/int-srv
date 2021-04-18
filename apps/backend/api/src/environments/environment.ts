@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   connection: {
-    type: process.env.DB_TYPE as 'aurora-data-api',
+    type: process.env.DB_TYPE as 'aurora-data-api' ,
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT),
     username: process.env.DB_USER_NAME,
