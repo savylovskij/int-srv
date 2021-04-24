@@ -41,9 +41,7 @@ export class AuthService {
       signInPayload.password
     );
 
-    if (!user) {
-      throw new UnauthorizedException();
-    }
+    if (!user) throw new UnauthorizedException();
 
     const payload = { username: user.username, userId: user.id };
 
