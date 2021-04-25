@@ -15,9 +15,9 @@ export const environment = {
     synchronize: true,
     logging: true,
     entities: ['dist/apps/backend/api/src/**/*.entity{.ts, .js}'],
-    migrations: ['dist/apps/backend/api/migrations/*{.ts, .js}'],
+    migrations: ['dist/apps/backend/api/src/migrations/*{.ts, .js}'],
     cli: {
-      migrationsDir: 'db/migrations',
+      migrationsDir: 'migrations',
     },
   },
 };
