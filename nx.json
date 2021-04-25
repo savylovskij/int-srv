@@ -53,6 +53,13 @@
         "scope: backend-api",
         "type: app"
       ]
+    },
+    "shared-data-access-interfaces": {
+      "tags": [
+        "type: lib",
+        "scope: shared",
+        "lib-type: data-access"
+      ]
     }
   }
 }

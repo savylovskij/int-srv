@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@int-srv/shared/data-access/interfaces": [
+        "libs/shared/data-access/interfaces/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
