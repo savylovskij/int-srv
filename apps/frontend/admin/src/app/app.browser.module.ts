@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { AppModule } from './app.module';
+
+import { AppComponent } from './app.component';
+
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 @NgModule({
   imports: [

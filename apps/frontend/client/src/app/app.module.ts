@@ -12,6 +12,5 @@ import { RouterModule } from '@angular/router';
       initialNavigation: 'enabled',
     }),
   ],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}
