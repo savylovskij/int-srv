@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Generate docs
-        run: npm run affected:--target=compodoc -- SHA1 SHA2
+        run: npm run affected --target=compodoc -- SHA1 SHA2
 
       - name: Deploy to GitHub Pages
         if: success()
