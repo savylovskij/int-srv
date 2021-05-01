@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Generate docs
-        run: npx nx affected --target=compodoc --all
+        run: npx nx affected --target=compodoc
 
       - name: Deploy to GitHub Pages
         if: success()
