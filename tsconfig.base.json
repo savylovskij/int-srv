@@ -20,6 +20,9 @@
       ],
       "@int-srv/frontend/shared/data-access/root-store": [
         "libs/frontend/shared/data-access/root-store/src/index.ts"
+      ],
+      "@int-srv/frontend/shared/data-access/user-store": [
+        "libs/frontend/shared/data-access/user-store/src/index.ts"
       ]
     }
   },
