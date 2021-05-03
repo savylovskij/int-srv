@@ -60,6 +60,13 @@
         "scope: shared",
         "lib-type: data-access"
       ]
+    },
+    "frontend-client-data-access-root-store": {
+      "tags": [
+        "type: lib",
+        "scope: frontend-client",
+        "lib-type: data-access"
+      ]
     }
   }
 }
