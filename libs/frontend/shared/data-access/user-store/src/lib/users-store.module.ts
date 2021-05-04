@@ -3,6 +3,9 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromUser from './+state/user.reducer';
 import { UserEffects } from './+state/user.effects';
+import { IUserStoreOptions } from './interfaces/user-store-options.interface';
+import { IUserApollo } from './interfaces/user-apollo.interface';
+import { IUserFacade } from './interfaces/user-facade.interface';
 
 @NgModule({
   imports: [
@@ -16,11 +19,16 @@ export class UsersStoreModule {
   ): ModuleWithProviders<UsersStoreModule> {
     return {
       ngModule: UsersStoreModule,
-      providers: [],
+      providers: [
+        {
+          provide: IUserApollo,
+          useClass: options.apollo,
+        },
+        {
+          provide: IUserFacade,
+          useClass: options.facade,
+        },
+      ],
     };
   }
-}
-
-export interface IUserStoreOptions {
-  apollo: string;
 }
