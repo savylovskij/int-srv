@@ -74,6 +74,13 @@
         "scope: shared",
         "lib-type: data-access"
       ]
+    },
+    "shared-utils-store": {
+      "tags": [
+        "type: lib",
+        "scope: shared",
+        "lib-type: utils"
+      ]
     }
   }
 }
