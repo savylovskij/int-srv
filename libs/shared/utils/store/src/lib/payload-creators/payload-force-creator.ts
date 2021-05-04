@@ -1,5 +1,5 @@
 import { ActionCreatorProps, props } from '@ngrx/store';
-import { IActionForcePayload } from '@int-srv/shared/data-access/interfaces';
+import { IActionForcePayload } from '@int-srv/shared/utils/interfaces';
 
 export function payloadForce<
   P extends Record<string, unknown>

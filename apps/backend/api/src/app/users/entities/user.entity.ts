@@ -1,4 +1,4 @@
-import type { IUsers } from '@int-srv/shared/data-access/interfaces';
+import type { IUsers } from '@int-srv/shared/utils/interfaces';
 import {
   Column,
   CreateDateColumn,

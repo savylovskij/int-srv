@@ -1,4 +1,4 @@
-import { TApolloResponse } from '@int-srv/shared/data-access/interfaces';
+import { TApolloResponse } from '@int-srv/shared/utils/interfaces';
 
 export abstract class IUserApollo {
   abstract loadUser(queryParams: Record<string, unknown>): TApolloResponse;
