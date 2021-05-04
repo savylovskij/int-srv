@@ -1,6 +1,6 @@
 [![Documentation](https://github.com/savylovskij/int-srv/actions/workflows/generateDocs.yml/badge.svg)](https://github.com/savylovskij/int-srv/actions/workflows/generateDocs.yml)
 
-## Главная старница
+## Главная страница
 
 
 ## QuickStart and documentation
