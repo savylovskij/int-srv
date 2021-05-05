@@ -1,43 +1,20 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  USER_FEATURE_KEY,
-  State,
-  UserPartialState,
-  userAdapter,
-} from './user.reducer';
+import { USER_FEATURE_KEY } from './user.reducer';
+import { IUserState } from '../interfaces/user-state.interface';
 
-// Lookup the 'User' feature state managed by NgRx
-export const getUserState = createFeatureSelector<UserPartialState, State>(
-  USER_FEATURE_KEY
-);
+export const getUserState = createFeatureSelector<IUserState>(USER_FEATURE_KEY);
 
-const { selectAll, selectEntities } = userAdapter.getSelectors();
-
-export const getUserLoaded = createSelector(
+export const getUser = createSelector(
   getUserState,
-  (state: State) => state.loaded
+  (state: IUserState) => state.user
 );
 
-export const getUserError = createSelector(
+export const getUserLoadRun = createSelector(
   getUserState,
-  (state: State) => state.error
+  (state: IUserState) => state.userLoadRun
 );
 
-export const getAllUser = createSelector(getUserState, (state: State) =>
-  selectAll(state)
-);
-
-export const getUserEntities = createSelector(getUserState, (state: State) =>
-  selectEntities(state)
-);
-
-export const getSelectedId = createSelector(
+export const getUserLoadFailure = createSelector(
   getUserState,
-  (state: State) => state.selectedId
-);
-
-export const getSelected = createSelector(
-  getUserEntities,
-  getSelectedId,
-  (entities, selectedId) => selectedId && entities[selectedId]
+  (state: IUserState) => state.userLoadFailure
 );
