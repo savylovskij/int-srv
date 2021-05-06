@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
  * Apollo request
  */
 export interface IApolloRequest {
-  key?: string;
+  keys?: string[];
   query: DocumentNode;
 }
 

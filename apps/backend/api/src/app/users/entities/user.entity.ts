@@ -26,4 +26,10 @@ export class UserEntity implements IUsers {
 
   @Column()
   password: string;
+
+  @Column({ length: 50, unique: true, nullable: true })
+  nickname: string;
+
+  @Column({ nullable: true })
+  phone: string;
 }
