@@ -42,7 +42,7 @@ export class UserEffects extends AbstractEffects<IUserState> {
 
   loadUserRun$ = createEffect(() =>
     this.dataPersistence.fetch(UserActions.loadUserRun, {
-      run: () =>
+      run: (): Observable<Action> | Action | void =>
         this.userApollo.loadUser().pipe(
           map<IUsers, Action>((payload) =>
             UserActions.loadUserSuccess({ payload })
