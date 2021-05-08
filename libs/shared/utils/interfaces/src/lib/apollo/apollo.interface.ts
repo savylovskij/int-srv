@@ -15,7 +15,7 @@ export type TApolloResponse<
   R extends ApolloError = ApolloError
 > = Observable<T | R>;
 
-export function ExtractApolloResponse<T = any>(
+export function extractApolloResponse<T = any>(
   result: ApolloQueryResult<any>,
   entitiesKey?: string[]
 ) {

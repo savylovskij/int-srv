@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { IUserApollo } from '../interfaces/user-apollo.interface';
 import {
-  ExtractApolloResponse,
+  extractApolloResponse,
   IUsers,
   TApolloResponse,
 } from '@int-srv/shared/utils/interfaces';
@@ -20,7 +20,7 @@ export class UserApollo implements IUserApollo {
       })
       .pipe(
         map((result: ApolloQueryResult<{ user: IUsers }>) =>
-          ExtractApolloResponse(result, UserQuery.userRequest.keys)
+          extractApolloResponse(result, UserQuery.userRequest.keys)
         ),
         catchError((error: ApolloError) => throwError(error))
       );
