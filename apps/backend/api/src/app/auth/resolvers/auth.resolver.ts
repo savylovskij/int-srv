@@ -2,7 +2,7 @@ import { Query, Resolver } from '@nestjs/graphql';
 import type {
   ISignAuthPayload,
   ISignAuthResponse,
-} from '@int-srv/shared/data-access/interfaces';
+} from '@int-srv/shared/utils/interfaces';
 import { SignIn } from '../decorators/auth.decorator';
 import { AuthService } from '../services/auth.service';
 

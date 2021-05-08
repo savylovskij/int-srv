@@ -1,5 +1,7 @@
-import { TApolloResponse } from '@int-srv/shared/data-access/interfaces';
+import { IUsers, TApolloResponse } from '@int-srv/shared/utils/interfaces';
 
 export abstract class IUserApollo {
-  abstract loadUser(queryParams: Record<string, unknown>): TApolloResponse;
+  abstract loadUser(
+    queryParams?: Record<string, unknown>
+  ): TApolloResponse<IUsers>;
 }

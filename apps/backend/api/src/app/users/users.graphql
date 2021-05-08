@@ -5,7 +5,10 @@ extend type Query{
 type User {
     id: Int
     username: String
+    password: String
     created: Date
     udated: Date
     email: String
+    nickname: String
+    phone: String
 }

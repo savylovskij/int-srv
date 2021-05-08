@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
-
-import { select, Store, Action } from '@ngrx/store';
-
-import * as UserActions from './user.actions';
-import * as UserFeature from './user.reducer';
+import { IUserFacade } from '../interfaces/user-facade.interface';
+import { Observable } from 'rxjs';
+import { IUsers } from '@int-srv/shared/utils/interfaces';
+import { ApolloError } from '@apollo/client';
+import { select, Store } from '@ngrx/store';
+import { IUserStoreFeatureKey } from '../interfaces/user-store-feature-key.interface';
 import * as UserSelectors from './user.selectors';
+import * as UserActions from './user.actions';
 
 @Injectable()
-export class UserFacade {
-  /**
-   * Combine pieces of state using createSelector,
-   * and expose them as observables through the facade.
-   */
-  loaded$ = this.store.pipe(select(UserSelectors.getUserLoaded));
-  allUser$ = this.store.pipe(select(UserSelectors.getAllUser));
-  selectedUser$ = this.store.pipe(select(UserSelectors.getSelected));
+export class UserFacade implements IUserFacade {
+  user$: Observable<IUsers> = this.store.pipe(select(UserSelectors.getUser));
 
-  constructor(private store: Store) {}
+  userLoadFailure$: Observable<ApolloError> = this.store.pipe(
+    select(UserSelectors.getUserLoadFailure)
+  );
 
-  /**
-   * Use the initialization action to perform one
-   * or more tasks in your Effects.
-   */
-  init() {
-    this.store.dispatch(UserActions.init());
+  userLoadRun$: Observable<boolean> = this.store.pipe(
+    select(UserSelectors.getUserLoadRun)
+  );
+
+  loadUser(force?: boolean): void {
+    this.store.dispatch(UserActions.loadUser({ payload: { force: true } }));
   }
+
+  constructor(private store: Store<IUserStoreFeatureKey>) {}
 }

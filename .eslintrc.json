@@ -45,7 +45,7 @@
                 ]
               },
               {
-                "sourceTag": "lib-type:feature",
+                "sourceTag": "lib-type: feature",
                 "onlyDependOnLibsWithTags": [
                   "lib-type:data-access",
                   "lib-type:utils",
@@ -54,21 +54,21 @@
                 ]
               },
               {
-                "sourceTag": "lib-type:ui",
+                "sourceTag": "lib-type: ui",
                 "onlyDependOnLibsWithTags": [
                   "lib-type:ui",
                   "lib-type:utils"
                 ]
               },
               {
-                "sourceTag": "lib-type:data-access",
+                "sourceTag": "lib-type: data-access",
                 "onlyDependOnLibsWithTags": [
                   "lib-type:data-access",
                   "lib-type:utils"
                 ]
               },
               {
-                "sourceTag": "lib-type:utils",
+                "sourceTag": "lib-type: utils",
                 "onlyDependOnLibsWithTags": [
                   "lib-type:utils"
                 ]
