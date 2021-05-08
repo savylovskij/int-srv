@@ -1,3 +1,3 @@
-import { IAbstractStorage } from './abstract-storage.interface';
+import { IStorage } from './abstract-storage.interface';
 
-export abstract class IMemoryStorage extends IAbstractStorage {}
+export abstract class IMemoryStorage extends IStorage {}

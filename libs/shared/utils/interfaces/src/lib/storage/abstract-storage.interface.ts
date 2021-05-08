@@ -1,4 +1,4 @@
-export abstract class IAbstractStorage implements Storage {
+export abstract class IStorage implements Storage {
   readonly length: number;
 
   abstract clear(): void;
