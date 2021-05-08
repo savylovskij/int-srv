@@ -119,7 +119,7 @@ export class BaseCookieService implements ICookieService {
     }
   }
 
-  private getCookieRegExp(name: string): RegExp {
+  protected getCookieRegExp(name: string): RegExp {
     const escapedName: string = name.replace(
       /([\[\]\{\}\(\)\|\=\;\+\?\,\.\*\^\$])/gi,
       '\\$1'
@@ -131,7 +131,7 @@ export class BaseCookieService implements ICookieService {
     );
   }
 
-  private safeDecodeURIComponent(encodedURIComponent: string): string {
+  protected safeDecodeURIComponent(encodedURIComponent: string): string {
     try {
       return decodeURIComponent(encodedURIComponent);
     } catch {
