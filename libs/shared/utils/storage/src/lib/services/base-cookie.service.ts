@@ -22,7 +22,7 @@ export class BaseCookieService implements ICookieService {
     return regExp.test(this.getCookieString());
   }
 
-  get(name: string): string {
+  get(name: string): string | null {
     if (this.check(name)) {
       name = encodeURIComponent(name);
       const regExp: RegExp = this.getCookieRegExp(name);
