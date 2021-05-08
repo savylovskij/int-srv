@@ -81,6 +81,13 @@
         "scope: shared",
         "lib-type: utils"
       ]
+    },
+    "shared-utils-storage": {
+      "tags": [
+        "type: lib",
+        "scope: shared",
+        "lib-type: utils"
+      ]
     }
   }
 }
