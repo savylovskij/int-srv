@@ -2,7 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import {
   ISignAuthPayload,
   ISignAuthResponse,
-} from '@int-srv/shared/data-access/interfaces';
+} from '@int-srv/shared/utils/interfaces';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../../users/services/user.service';
 import { PasswordService } from './password.service';
