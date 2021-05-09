@@ -28,6 +28,9 @@
       ],
       "@int-srv/shared/utils/storage": [
         "libs/shared/utils/storage/src/index.ts"
+      ],
+      "@int-srv/frontend/shared/data-access/auth-store": [
+        "libs/frontend/shared/data-access/auth-store/src/index.ts"
       ]
     }
   },
