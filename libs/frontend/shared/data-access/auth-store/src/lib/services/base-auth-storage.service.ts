@@ -7,7 +7,7 @@ export const authStorageKey: { [key: string]: string } = {
 };
 
 @Injectable()
-export class BaseAuthStorageService implements IAuthStorage {
+export class BaseAuthStorage implements IAuthStorage {
   clear(): void {
     for (const prop of Object.values(authStorageKey)) {
       this.storage.removeItem(prop);
