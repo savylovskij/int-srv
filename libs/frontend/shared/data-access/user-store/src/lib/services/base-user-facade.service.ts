@@ -5,11 +5,11 @@ import { IUsers } from '@int-srv/shared/utils/interfaces';
 import { ApolloError } from '@apollo/client';
 import { select, Store } from '@ngrx/store';
 import { IUserStoreFeatureKey } from '../interfaces/user-store-feature-key.interface';
-import * as UserSelectors from './user.selectors';
-import * as UserActions from './user.actions';
+import * as UserSelectors from '../+state/user.selectors';
+import * as UserActions from '../+state/user.actions';
 
 @Injectable()
-export class UserFacade implements IUserFacade {
+export class BaseUsersFacade implements IUserFacade {
   user$: Observable<IUsers> = this.store.pipe(select(UserSelectors.getUser));
 
   userLoadFailure$: Observable<ApolloError> = this.store.pipe(

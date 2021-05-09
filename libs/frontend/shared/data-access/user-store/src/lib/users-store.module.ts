@@ -6,8 +6,8 @@ import { UserEffects } from './+state/user.effects';
 import { IUserStoreOptions } from './interfaces/user-store-options.interface';
 import { IUserApollo } from './interfaces/user-apollo.interface';
 import { IUserFacade } from './interfaces/user-facade.interface';
-import { UserFacade } from './+state/user.facade';
-import { UserApollo } from './services/user-apollo.service';
+import { BaseUsersFacade } from './services/base-user-facade.service';
+import { BaseUsersApollo } from './services/base-user-apollo.service';
 
 @NgModule({
   imports: [
@@ -24,11 +24,11 @@ export class UsersStoreModule {
       providers: [
         {
           provide: IUserApollo,
-          useClass: options.apollo || UserApollo,
+          useClass: options.apollo || BaseUsersApollo,
         },
         {
           provide: IUserFacade,
-          useClass: options.facade || UserFacade,
+          useClass: options.facade || BaseUsersFacade,
         },
       ],
     };
