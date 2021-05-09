@@ -18,7 +18,7 @@ import { BaseAuthStorage } from './services/base-auth-storage.service';
   providers: [AuthFacade],
 })
 export class AuthStoreModule {
-  static foRoot(
+  static forRoot(
     options: Partial<IAuthStorageOptions> = {}
   ): ModuleWithProviders<AuthStoreModule> {
     return {

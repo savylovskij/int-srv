@@ -7,15 +7,21 @@ import { RouterModule } from '@angular/router';
 import { RootStoreModule } from '@int-srv/frontend/shared/data-access/root-store';
 
 import { AppComponent } from './components/app/app.component';
+import { AuthStoreModule } from '@int-srv/frontend/shared/data-access/auth-store';
+import { UsersStoreModule } from '@int-srv/frontend/shared/data-access/user-store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     NxModule.forRoot(),
+    RootStoreModule,
+    AuthStoreModule.forRoot(),
+    UsersStoreModule.forRoot(),
+    EffectsModule.forRoot([]),
     RouterModule.forRoot([], {
       initialNavigation: 'enabled',
     }),
-    RootStoreModule,
   ],
   providers: [
     {
