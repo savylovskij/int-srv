@@ -1,22 +1,24 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Action } from '@ngrx/store';
 import { DataPersistence } from '@nrwl/angular';
 import { IUserStoreFeatureKey } from '../interfaces/user-store-feature-key.interface';
+import { isPlatformBrowser } from '@angular/common';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { IUserApollo } from '../interfaces/user-apollo.interface';
 import { createEffect } from '@ngrx/effects';
+
 import {
   IActionEffectPayload,
   IActionForcePayload,
   IUsers,
 } from '@int-srv/shared/utils/interfaces';
-import * as UserActions from './user.actions';
-import { Action } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { USER_FEATURE_KEY } from '@int-srv/frontend/shared/data-access/user-store';
-import { isPlatformBrowser } from '@angular/common';
-
 import { AbstractEffects } from '@int-srv/shared/utils/store';
+
+import { USER_FEATURE_KEY } from './user.reducer';
+import * as UserActions from './user.actions';
 import { IUserState } from '../interfaces/user-state.interface';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class UserEffects extends AbstractEffects<IUserState> {
