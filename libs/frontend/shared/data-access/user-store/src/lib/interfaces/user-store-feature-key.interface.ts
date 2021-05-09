@@ -1,4 +1,4 @@
-import { USER_FEATURE_KEY } from '@int-srv/frontend/shared/data-access/user-store';
+import { USER_FEATURE_KEY } from '../+state/user.reducer';
 import { IUserState } from './user-state.interface';
 
 export interface IUserStoreFeatureKey {
