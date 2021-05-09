@@ -12,7 +12,7 @@ import { ApolloError, ApolloQueryResult } from '@apollo/client';
 import { throwError } from 'rxjs';
 
 @Injectable()
-export class UserApollo implements IUserApollo {
+export class BaseUsersApollo implements IUserApollo {
   loadUser(queryParams: Record<string, unknown> = {}): TApolloResponse<IUsers> {
     return this.apollo
       .query<{ user: IUsers }>({
