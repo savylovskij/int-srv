@@ -1,5 +1,5 @@
 import { IApolloRequest } from '@int-srv/shared/utils/interfaces';
-import { gql } from '@apollo/client/core';
+import { gql } from 'apollo-angular';
 
 export const userRequest: IApolloRequest = {
   keys: ['user'],
