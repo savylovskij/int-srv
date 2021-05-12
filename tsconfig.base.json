@@ -40,6 +40,9 @@
       ],
       "@int-srv/frontend/client/feature/user-profile": [
         "libs/frontend/client/feature/user-profile/src/index.ts"
+      ],
+      "@int-srv/frontend/ui/components": [
+        "libs/frontend/ui/components/src/index.ts"
       ]
     }
   },
