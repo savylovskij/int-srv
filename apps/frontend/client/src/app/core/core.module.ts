@@ -5,6 +5,7 @@ import { createApollo } from './utils/create-apollo';
 import { NxModule } from '@nrwl/angular';
 import { RouterModule } from '@angular/router';
 import { RootStoreModule } from '@int-srv/frontend/shared/data-access/root-store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { coreContainers, coreRotes } from './core.common';
 
@@ -13,6 +14,7 @@ import { coreContainers, coreRotes } from './core.common';
   imports: [
     NxModule.forRoot(),
     RootStoreModule,
+    EffectsModule.forRoot([]),
     RouterModule.forRoot(coreRotes, {
       initialNavigation: 'enabled',
       scrollPositionRestoration: 'enabled',
