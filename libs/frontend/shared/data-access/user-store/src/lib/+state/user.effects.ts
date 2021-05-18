@@ -32,8 +32,8 @@ export class UserEffects extends AbstractEffects<IUserState> {
         ): Observable<Action> | Action | void =>
           isPlatformBrowser(this.platformId) &&
           (!this.getState(store).userLoadRun || action.payload.force)
-            ? UserActions.loadUserRun
-            : UserActions.loadUserCancel,
+            ? UserActions.loadUserRun()
+            : UserActions.loadUserCancel(),
         onError: (
           action: IActionEffectPayload<IActionForcePayload>,
           error: any

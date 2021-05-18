@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { IUserFacade } from '@int-srv/frontend/shared/data-access/user-store';
 
 @Component({
   selector: 'int-srv-user-profile-ui',
@@ -6,4 +7,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./user-profile-ui.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserProfileUiComponent {}
+export class UserProfileUiComponent implements OnInit {
+  ngOnInit(): void {
+    this.userFacade.loadUser();
+  }
+
+  constructor(private userFacade: IUserFacade) {}
+}
