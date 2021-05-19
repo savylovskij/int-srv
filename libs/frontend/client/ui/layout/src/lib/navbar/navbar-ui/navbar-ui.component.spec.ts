@@ -8,9 +8,8 @@ describe('NavbarUiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarUiComponent ]
-    })
-    .compileComponents();
+      declarations: [NavbarUiComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

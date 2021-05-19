@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomePageBlockComponent } from './home-page-block/home-page-block.component';
-import { BaseLayoutUiComponent } from '@int-srv/frontend/ui/components';
+import { BaseLayoutUiComponent } from '@int-srv/frontend/client/ui/layout';
 
 export const homeRoutes: Routes = [
   {
