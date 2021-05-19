@@ -2,8 +2,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'int-srv-auth-ui',
-  templateUrl: './auth-ui.component.html',
-  styleUrls: ['./auth-ui.component.scss'],
+  templateUrl: './auth-block.component.html',
+  styleUrls: ['./auth-block.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthUiComponent {}
+export class AuthBlockComponent {}

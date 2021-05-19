@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { AuthUiComponent } from './auth-ui/auth-ui.component';
+import { AuthBlockComponent } from './auth-block/auth-block.component';
 
 export const authRoutes: Routes = [
   {
     path: '',
-    component: AuthUiComponent,
+    component: AuthBlockComponent,
   },
 ];
 
-export const authContainers: any[] = [AuthUiComponent];
+export const authContainers: any[] = [AuthBlockComponent];

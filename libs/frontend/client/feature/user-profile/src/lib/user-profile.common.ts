@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { UserProfileUiComponent } from './user-profile-ui/user-profile-ui.component';
+import { UserProfileBlockComponent } from './user-profile-block/user-profile-block.component';
 
 export const userProfileRoutes: Routes = [
   {
     path: '',
-    component: UserProfileUiComponent,
+    component: UserProfileBlockComponent,
   },
 ];
 
-export const userProfileContainers: any[] = [UserProfileUiComponent];
+export const userProfileContainers: any[] = [UserProfileBlockComponent];

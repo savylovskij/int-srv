@@ -3,11 +3,11 @@ import { IUserFacade } from '@int-srv/frontend/shared/data-access/user-store';
 
 @Component({
   selector: 'int-srv-user-profile-ui',
-  templateUrl: './user-profile-ui.component.html',
-  styleUrls: ['./user-profile-ui.component.scss'],
+  templateUrl: './user-profile-block.component.html',
+  styleUrls: ['./user-profile-block.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserProfileUiComponent implements OnInit {
+export class UserProfileBlockComponent implements OnInit {
   ngOnInit(): void {
     this.userFacade.loadUser();
   }

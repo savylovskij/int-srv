@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomePageUiComponent } from './home-page-ui/home-page-ui.component';
+import { HomePageBlockComponent } from './home-page-block/home-page-block.component';
 import { BaseLayoutUiComponent } from '@int-srv/frontend/ui/components';
 
 export const homeRoutes: Routes = [
@@ -9,7 +9,7 @@ export const homeRoutes: Routes = [
     children: [
       {
         path: '',
-        component: HomePageUiComponent,
+        component: HomePageBlockComponent,
       },
       {
         path: 'auth',
@@ -29,4 +29,4 @@ export const homeRoutes: Routes = [
   },
 ];
 
-export const homeContainers: any[] = [HomePageUiComponent];
+export const homeContainers: any[] = [HomePageBlockComponent];

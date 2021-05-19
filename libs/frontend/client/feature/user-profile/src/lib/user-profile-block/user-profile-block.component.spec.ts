@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserProfileUiComponent } from './user-profile-ui.component';
+import { UserProfileBlockComponent } from './user-profile-block.component';
 
 describe('UserProfileUiComponent', () => {
-  let component: UserProfileUiComponent;
-  let fixture: ComponentFixture<UserProfileUiComponent>;
+  let component: UserProfileBlockComponent;
+  let fixture: ComponentFixture<UserProfileBlockComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserProfileUiComponent ]
-    })
-    .compileComponents();
+      declarations: [UserProfileBlockComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserProfileUiComponent);
+    fixture = TestBed.createComponent(UserProfileBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
