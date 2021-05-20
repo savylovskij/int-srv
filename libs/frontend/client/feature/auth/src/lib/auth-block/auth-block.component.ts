@@ -6,4 +6,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./auth-block.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthBlockComponent {}
+export class AuthBlockComponent {
+  onLogin(loginPayload: { login: string; password: string }): void {
+    console.log(loginPayload);
+  }
+}
