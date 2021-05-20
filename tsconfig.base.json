@@ -46,6 +46,9 @@
       ],
       "@int-srv/frontend/client/ui/user-profile": [
         "libs/frontend/client/ui/user-profile/src/index.ts"
+      ],
+      "@int-srv/frontend/client/ui/login-form": [
+        "libs/frontend/client/ui/login-form/src/index.ts"
       ]
     }
   },
