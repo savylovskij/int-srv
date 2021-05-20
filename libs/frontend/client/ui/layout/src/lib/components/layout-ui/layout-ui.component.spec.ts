@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BaseLayoutUiComponent } from './base-layout-ui.component';
+import { LayoutUiComponent } from './layout-ui.component';
 
 describe('BaseLayoutUiComponent', () => {
-  let component: BaseLayoutUiComponent;
-  let fixture: ComponentFixture<BaseLayoutUiComponent>;
+  let component: LayoutUiComponent;
+  let fixture: ComponentFixture<LayoutUiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BaseLayoutUiComponent],
+      declarations: [LayoutUiComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BaseLayoutUiComponent);
+    fixture = TestBed.createComponent(LayoutUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { HomePageBlockComponent } from './home-page-block/home-page-block.component';
-import { BaseLayoutUiComponent } from '@int-srv/frontend/client/ui/layout';
+import { LayoutUiComponent } from '@int-srv/frontend/client/ui/layout';
 
 export const homeRoutes: Routes = [
   {
     path: '',
-    component: BaseLayoutUiComponent,
+    component: LayoutUiComponent,
     children: [
       {
         path: '',
