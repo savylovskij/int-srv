@@ -1,0 +1,9 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+@Component({
+  selector: 'int-srv-user-profile-ui',
+  templateUrl: './user-profile-ui.component.html',
+  styleUrls: ['./user-profile-ui.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class UserProfileUiComponent {}
