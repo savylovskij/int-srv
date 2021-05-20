@@ -31,6 +31,21 @@
       ],
       "@int-srv/frontend/shared/data-access/auth-store": [
         "libs/frontend/shared/data-access/auth-store/src/index.ts"
+      ],
+      "@int-srv/frontend/client/feature/home": [
+        "libs/frontend/client/feature/home/src/index.ts"
+      ],
+      "@int-srv/frontend/client/feature/auth": [
+        "libs/frontend/client/feature/auth/src/index.ts"
+      ],
+      "@int-srv/frontend/client/feature/user-profile": [
+        "libs/frontend/client/feature/user-profile/src/index.ts"
+      ],
+      "@int-srv/frontend/client/ui/layout": [
+        "libs/frontend/client/ui/layout/src/index.ts"
+      ],
+      "@int-srv/frontend/client/ui/user-profile": [
+        "libs/frontend/client/ui/user-profile/src/index.ts"
       ]
     }
   },

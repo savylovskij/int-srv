@@ -6,21 +6,18 @@ import { NxModule } from '@nrwl/angular';
 import { RouterModule } from '@angular/router';
 import { RootStoreModule } from '@int-srv/frontend/shared/data-access/root-store';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthStoreModule } from '@int-srv/frontend/shared/data-access/auth-store';
-import { UsersStoreModule } from '@int-srv/frontend/shared/data-access/user-store';
 
-import { AppComponent } from './components/app/app.component';
+import { coreContainers, coreRotes } from './core.common';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [...coreContainers],
   imports: [
     NxModule.forRoot(),
     RootStoreModule,
-    AuthStoreModule.forRoot(),
-    UsersStoreModule.forRoot(),
     EffectsModule.forRoot([]),
-    RouterModule.forRoot([], {
+    RouterModule.forRoot(coreRotes, {
       initialNavigation: 'enabled',
+      scrollPositionRestoration: 'enabled',
     }),
   ],
   providers: [

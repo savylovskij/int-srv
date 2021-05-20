@@ -9,5 +9,10 @@ module.exports = {
     '<rootDir>/libs/shared/utils/store',
     '<rootDir>/libs/shared/utils/storage',
     '<rootDir>/libs/frontend/shared/data-access/auth-store',
+    '<rootDir>/libs/frontend/client/feature/home',
+    '<rootDir>/libs/frontend/client/feature/auth',
+    '<rootDir>/libs/frontend/client/feature/user-profile',
+    '<rootDir>/libs/frontend/ui/components',
+    '<rootDir>/libs/frontend/client/ui/user-profile',
   ],
 };

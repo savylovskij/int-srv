@@ -16,7 +16,7 @@ export type TApolloResponse<
 > = Observable<T | R>;
 
 export function extractApolloResponse<T = any>(
-  result: ApolloQueryResult<any>,
+  result: ApolloQueryResult<T>,
   entitiesKey?: string[]
 ) {
   const key = !entitiesKey ? Object.keys(entitiesKey) : entitiesKey;
