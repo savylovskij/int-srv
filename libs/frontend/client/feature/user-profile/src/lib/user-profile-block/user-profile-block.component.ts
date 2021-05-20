@@ -8,9 +8,7 @@ import { IUserFacade } from '@int-srv/frontend/shared/data-access/user-store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserProfileBlockComponent {
-  user$ = this.userFacade.user$;
-
-  constructor(private userFacade: IUserFacade) {
+  constructor(public userFacade: IUserFacade) {
     this.userFacade.loadUser();
   }
 }
