@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ISignAuthPayload } from '@int-srv/shared/utils/interfaces';
 
 @Component({
   selector: 'int-srv-auth-ui',
@@ -7,7 +8,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthBlockComponent {
-  onLogin(loginPayload: { login: string; password: string }): void {
+  onLogin(loginPayload: ISignAuthPayload): void {
     console.log(loginPayload);
   }
 }
