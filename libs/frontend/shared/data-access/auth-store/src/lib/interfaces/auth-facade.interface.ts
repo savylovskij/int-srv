@@ -15,5 +15,5 @@ export abstract class IAuthFacade {
 
   abstract signInClear(): void;
 
-  abstract signOut(): void;
+  abstract signOut(force?: boolean): void;
 }
