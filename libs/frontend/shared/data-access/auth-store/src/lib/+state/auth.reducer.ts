@@ -6,16 +6,7 @@ import { AuthEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
-export interface State extends EntityState<AuthEntity> {
-  selectedId?: string | number; // which Auth record has been selected
-  loaded: boolean; // has the Auth list been loaded
-  error?: string | null; // last known error (if any)
-}
-
-export interface AuthPartialState {
-  readonly [AUTH_FEATURE_KEY]: State;
-}
-
+/*
 export const authAdapter: EntityAdapter<AuthEntity> = createEntityAdapter<AuthEntity>();
 
 export const initialState: State = authAdapter.getInitialState({
@@ -35,3 +26,4 @@ const authReducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return authReducer(state, action);
 }
+*/
