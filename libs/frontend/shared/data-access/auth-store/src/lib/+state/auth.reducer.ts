@@ -1,29 +1,52 @@
-import { createReducer, on, Action } from '@ngrx/store';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-
+import { Action, createReducer, on } from '@ngrx/store';
+import { authInitialState } from './auth-initial-state';
+import { IAuthState } from '../interfaces/auth-state.interface';
 import * as AuthActions from './auth.actions';
-import { AuthEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
-/*
-export const authAdapter: EntityAdapter<AuthEntity> = createEntityAdapter<AuthEntity>();
-
-export const initialState: State = authAdapter.getInitialState({
-  // set initial required properties
-  loaded: false,
-});
-
 const authReducer = createReducer(
-  initialState,
-  on(AuthActions.init, (state) => ({ ...state, loaded: false, error: null })),
-  on(AuthActions.loadAuthSuccess, (state, { auth }) =>
-    authAdapter.setAll(auth, { ...state, loaded: true })
-  ),
-  on(AuthActions.loadAuthFailure, (state, { error }) => ({ ...state, error }))
+  authInitialState,
+  on(AuthActions.sigInSet, (state, { payload }) => ({
+    ...state,
+    signIn: payload,
+  })),
+  on(AuthActions.sigInClear, (state) => ({
+    ...state,
+    signIn: null,
+  })),
+  on(AuthActions.sigInRun, (state) => ({
+    ...state,
+    signInRun: true,
+    signInError: null,
+  })),
+  on(AuthActions.sigInFailure, (state, { payload }) => ({
+    ...state,
+    signInError: payload,
+    signInRun: false,
+  })),
+  on(AuthActions.sigInSuccess, (state) => ({
+    ...state,
+    signInError: null,
+    signInRun: false,
+  })),
+  on(AuthActions.sigOutRun, (state) => ({
+    ...state,
+    signOutError: null,
+    signOutRun: true,
+  })),
+  on(AuthActions.sigOutSuccess, (state) => ({
+    ...state,
+    signOutError: null,
+    signOutRun: false,
+  })),
+  on(AuthActions.sigOutFailure, (state, { payload }) => ({
+    ...state,
+    signOutError: payload,
+    signOutRun: false,
+  }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: IAuthState | undefined, action: Action) {
   return authReducer(state, action);
 }
-*/
