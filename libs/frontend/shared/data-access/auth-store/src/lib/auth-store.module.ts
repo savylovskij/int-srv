@@ -4,7 +4,6 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromAuth from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
-import { AuthFacade } from './+state/auth.facade';
 import { IAuthStorageOptions } from './interfaces/auth-storage-options.interface';
 import { IAuthStorage } from './interfaces/auth-storage.interface';
 import { BaseAuthStorage } from './services/base-auth-storage.service';
@@ -12,6 +11,8 @@ import { IAuthApollo } from './interfaces/auth-apollo.interface';
 import { BaseAuthApollo } from './services/base-auth-apollo.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { IAuthFacade } from './interfaces/auth-facade.interface';
+import { BaseAuthFacade } from './services/base-auth.facade';
 
 @NgModule({
   imports: [
@@ -19,7 +20,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducer),
     EffectsModule.forFeature([AuthEffects]),
   ],
-  providers: [AuthFacade],
 })
 export class AuthStoreModule {
   static forRoot(
@@ -32,6 +32,10 @@ export class AuthStoreModule {
           provide: HTTP_INTERCEPTORS,
           useClass: AuthInterceptor,
           multi: true,
+        },
+        {
+          provide: IAuthFacade,
+          useClass: options.facade || BaseAuthFacade,
         },
         {
           provide: IAuthStorage,

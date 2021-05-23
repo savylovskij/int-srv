@@ -6,7 +6,7 @@ import * as AuthActions from './auth.actions';
 
 @Injectable()
 export class AuthEffects {
-  init$ = createEffect(() =>
+  /*  init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.init),
       fetch({
@@ -21,7 +21,7 @@ export class AuthEffects {
         },
       })
     )
-  );
+  );*/
 
   constructor(private actions$: Actions) {}
 }
