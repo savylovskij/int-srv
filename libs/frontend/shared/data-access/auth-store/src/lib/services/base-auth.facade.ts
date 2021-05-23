@@ -15,19 +15,19 @@ export class BaseAuthFacade implements IAuthFacade {
   signOutRun$ = this.store.pipe(select(AuthSelectors.getSignOutRun));
 
   signIn(force?: boolean): void {
-    this.store.dispatch(AuthActions.sigIn({ payload: { force } }));
+    this.store.dispatch(AuthActions.signIn({ payload: { force } }));
   }
 
   signInClear(): void {
-    this.store.dispatch(AuthActions.sigInClear());
+    this.store.dispatch(AuthActions.signInClear());
   }
 
   signInSet(payload: ISignAuthPayload): void {
-    this.store.dispatch(AuthActions.sigInSet({ payload }));
+    this.store.dispatch(AuthActions.signInSet({ payload }));
   }
 
   signOut(force?: boolean): void {
-    this.store.dispatch(AuthActions.sigOut({ payload: { force } }));
+    this.store.dispatch(AuthActions.signOut({ payload: { force } }));
   }
 
   constructor(private store: Store<IAuthStoreFeatureKey>) {}

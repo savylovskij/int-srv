@@ -6,28 +6,28 @@ import {
 } from '@int-srv/shared/utils/interfaces';
 import { ApolloError } from '@apollo/client';
 
-export const sigIn = createAction('[Auth] SigIn', payloadForce());
-export const sigInSet = createAction(
-  '[Auth] SigIn data set',
+export const signIn = createAction('[Auth] SignIn', payloadForce());
+export const signInSet = createAction(
+  '[Auth] SignIn data set',
   payload<ISignAuthPayload>()
 );
-export const sigInClear = createAction('[Auth] SigIn data clear');
-export const sigInCancel = createAction('[Auth] SigIn cancel');
-export const sigInRun = createAction('[Auth] SigIn run');
-export const sigInSuccess = createAction(
-  '[Auth] SigIn success',
+export const signInClear = createAction('[Auth] SignIn data clear');
+export const signInCancel = createAction('[Auth] SignIn cancel');
+export const signInRun = createAction('[Auth] SignIn run');
+export const signInSuccess = createAction(
+  '[Auth] SignIn success',
   payload<ISignAuthResponse>()
 );
-export const sigInFailure = createAction(
-  '[Auth] SigIn error',
+export const signInFailure = createAction(
+  '[Auth] SignIn error',
   payload<ApolloError>()
 );
 
-export const sigOut = createAction('[Auth] SigOut', payloadForce());
-export const sigOutCancel = createAction('[Auth] SigOut cancel');
-export const sigOutRun = createAction('[Auth] SigOut run');
-export const sigOutSuccess = createAction('[Auth] SigOut success');
-export const sigOutFailure = createAction(
-  '[Auth] SigOut error',
+export const signOut = createAction('[Auth] SignOut', payloadForce());
+export const signOutCancel = createAction('[Auth] SignOut cancel');
+export const signOutRun = createAction('[Auth] SignOut run');
+export const signOutSuccess = createAction('[Auth] SignOut success');
+export const signOutFailure = createAction(
+  '[Auth] SignOut error',
   payload<ApolloError>()
 );

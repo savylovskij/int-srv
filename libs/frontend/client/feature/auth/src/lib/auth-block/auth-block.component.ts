@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ISignAuthPayload } from '@int-srv/shared/utils/interfaces';
 import { IAuthFacade } from '@int-srv/frontend/shared/data-access/auth-store';
 
 @Component({
@@ -9,10 +8,13 @@ import { IAuthFacade } from '@int-srv/frontend/shared/data-access/auth-store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthBlockComponent {
-  onLogin(loginPayload: ISignAuthPayload): void {
+  onLogin(loginPayload): void {
     console.log(loginPayload);
-    this.authFacade.signInSet(loginPayload);
-    //this.authFacade.signIn();
+    this.authFacade.signInSet({
+      username: loginPayload.login,
+      password: loginPayload.password,
+    });
+    this.authFacade.signIn();
   }
 
   constructor(public authFacade: IAuthFacade) {}

@@ -7,40 +7,40 @@ export const AUTH_FEATURE_KEY = 'auth';
 
 const authReducer = createReducer(
   authInitialState,
-  on(AuthActions.sigInSet, (state, { payload }) => ({
+  on(AuthActions.signInSet, (state, { payload }) => ({
     ...state,
     signIn: payload,
   })),
-  on(AuthActions.sigInClear, (state) => ({
+  on(AuthActions.signInClear, (state) => ({
     ...state,
     signIn: null,
   })),
-  on(AuthActions.sigInRun, (state) => ({
+  on(AuthActions.signInRun, (state) => ({
     ...state,
     signInRun: true,
     signInError: null,
   })),
-  on(AuthActions.sigInFailure, (state, { payload }) => ({
+  on(AuthActions.signInFailure, (state, { payload }) => ({
     ...state,
     signInError: payload,
     signInRun: false,
   })),
-  on(AuthActions.sigInSuccess, (state) => ({
+  on(AuthActions.signInSuccess, (state) => ({
     ...state,
     signInError: null,
     signInRun: false,
   })),
-  on(AuthActions.sigOutRun, (state) => ({
+  on(AuthActions.signOutRun, (state) => ({
     ...state,
     signOutError: null,
     signOutRun: true,
   })),
-  on(AuthActions.sigOutSuccess, (state) => ({
+  on(AuthActions.signOutSuccess, (state) => ({
     ...state,
     signOutError: null,
     signOutRun: false,
   })),
-  on(AuthActions.sigOutFailure, (state, { payload }) => ({
+  on(AuthActions.signOutFailure, (state, { payload }) => ({
     ...state,
     signOutError: payload,
     signOutRun: false,
