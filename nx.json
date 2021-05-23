@@ -130,6 +130,13 @@
         "scope: shared",
         "lib-type: ui"
       ]
+    },
+    "frontend-client-ui-login-form": {
+      "tags": [
+        "type: lib",
+        "scope: shared",
+        "lib-type: ui"
+      ]
     }
   }
 }

@@ -8,12 +8,16 @@ import { RootStoreModule } from '@int-srv/frontend/shared/data-access/root-store
 import { EffectsModule } from '@ngrx/effects';
 
 import { coreContainers, coreRotes } from './core.common';
+import { AuthModule } from '@int-srv/frontend/client/feature/auth';
+import { StorageModule } from '@int-srv/shared/utils/storage';
 
 @NgModule({
   declarations: [...coreContainers],
   imports: [
     NxModule.forRoot(),
     RootStoreModule,
+    StorageModule.foRoot(),
+    AuthModule,
     EffectsModule.forRoot([]),
     RouterModule.forRoot(coreRotes, {
       initialNavigation: 'enabled',

@@ -1,37 +1,52 @@
-import { createReducer, on, Action } from '@ngrx/store';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-
+import { Action, createReducer, on } from '@ngrx/store';
+import { authInitialState } from './auth-initial-state';
+import { IAuthState } from '../interfaces/auth-state.interface';
 import * as AuthActions from './auth.actions';
-import { AuthEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
-export interface State extends EntityState<AuthEntity> {
-  selectedId?: string | number; // which Auth record has been selected
-  loaded: boolean; // has the Auth list been loaded
-  error?: string | null; // last known error (if any)
-}
-
-export interface AuthPartialState {
-  readonly [AUTH_FEATURE_KEY]: State;
-}
-
-export const authAdapter: EntityAdapter<AuthEntity> = createEntityAdapter<AuthEntity>();
-
-export const initialState: State = authAdapter.getInitialState({
-  // set initial required properties
-  loaded: false,
-});
-
 const authReducer = createReducer(
-  initialState,
-  on(AuthActions.init, (state) => ({ ...state, loaded: false, error: null })),
-  on(AuthActions.loadAuthSuccess, (state, { auth }) =>
-    authAdapter.setAll(auth, { ...state, loaded: true })
-  ),
-  on(AuthActions.loadAuthFailure, (state, { error }) => ({ ...state, error }))
+  authInitialState,
+  on(AuthActions.signInSet, (state, { payload }) => ({
+    ...state,
+    signIn: payload,
+  })),
+  on(AuthActions.signInClear, (state) => ({
+    ...state,
+    signIn: null,
+  })),
+  on(AuthActions.signInRun, (state) => ({
+    ...state,
+    signInRun: true,
+    signInError: null,
+  })),
+  on(AuthActions.signInFailure, (state, { payload }) => ({
+    ...state,
+    signInError: payload,
+    signInRun: false,
+  })),
+  on(AuthActions.signInSuccess, (state) => ({
+    ...state,
+    signInError: null,
+    signInRun: false,
+  })),
+  on(AuthActions.signOutRun, (state) => ({
+    ...state,
+    signOutError: null,
+    signOutRun: true,
+  })),
+  on(AuthActions.signOutSuccess, (state) => ({
+    ...state,
+    signOutError: null,
+    signOutRun: false,
+  })),
+  on(AuthActions.signOutFailure, (state, { payload }) => ({
+    ...state,
+    signOutError: payload,
+    signOutRun: false,
+  }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: IAuthState | undefined, action: Action) {
   return authReducer(state, action);
 }

@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IUsers } from '@int-srv/shared/utils/interfaces';
+import { ApolloError } from '@apollo/client/core';
 
 @Component({
   selector: 'int-srv-user-profile-ui',
@@ -6,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./user-profile-ui.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserProfileUiComponent {}
+export class UserProfileUiComponent {
+  @Input()
+  user: IUsers;
+
+  @Input()
+  failure: ApolloError;
+}
