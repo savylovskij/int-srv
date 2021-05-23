@@ -16,30 +16,30 @@ import { BaseCookieStorage } from './storage/base-cookie.storage';
 @NgModule()
 export class StorageModule {
   static foRoot(
-    options: Partial<IStorageOptions>
+    option: Partial<IStorageOptions> = {}
   ): ModuleWithProviders<StorageModule> {
     return {
       ngModule: StorageModule,
       providers: [
         {
           provide: ICookieService,
-          useClass: options.cookieService || BaseCookieService,
+          useClass: option.cookieService || BaseCookieService,
         },
         {
           provide: ICookieStorage,
-          useClass: options.cookieStorage || BaseCookieStorage,
+          useClass: option.cookieStorage || BaseCookieStorage,
         },
         {
           provide: ISessionStorage,
-          useClass: options.sessionStorage || BaseSessionStorage,
+          useClass: option.sessionStorage || BaseSessionStorage,
         },
         {
           provide: ILocalStorage,
-          useClass: options.localStorage || BaseLocalStorage,
+          useClass: option.localStorage || BaseLocalStorage,
         },
         {
           provide: IMemoryStorage,
-          useClass: options.memoryStorage || BaseMemoryStorage,
+          useClass: option.memoryStorage || BaseMemoryStorage,
         },
       ],
     };

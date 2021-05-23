@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
+
 import { HomePageBlockComponent } from './home-page-block/home-page-block.component';
 import { LayoutUiComponent } from '@int-srv/frontend/client/ui/layout';
+import { AuthBlockComponent } from '@int-srv/frontend/client/feature/auth';
 
 export const homeRoutes: Routes = [
   {
@@ -13,10 +15,7 @@ export const homeRoutes: Routes = [
       },
       {
         path: 'auth',
-        loadChildren: () =>
-          import('@int-srv/frontend/client/feature/auth').then(
-            (m) => m.AuthModule
-          ),
+        component: AuthBlockComponent,
       },
       {
         path: 'user-profile',
